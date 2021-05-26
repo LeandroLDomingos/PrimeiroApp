@@ -1,6 +1,11 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>amigos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Amigos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,12 +16,18 @@
         Nome
       </ion-label>
       <ion-label>
-        Força
+        Idade
       </ion-label>
+      <ion-label>
+        Nível de amizade
+      </ion-label>
+      <ion-label></ion-label>
     </ion-item>
-    <ion-label *ngFor='let p of amigos; let i = index'>
+    <ion-item *ngFor='let a of amigos; let i = index'>
       <ion-label>{{a.nome}}</ion-label>
-     </ion-label>{{a.forca}}</ion-label>
+      <ion-label>{{a.idade}}</ion-label>
+      <ion-label>{{a.nivel}}</ion-label>
+      <ion-label><ion-button (click)='amigosAction(a)'>+</ion-button></ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

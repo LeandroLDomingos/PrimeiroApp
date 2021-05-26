@@ -1,9 +1,26 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>viagens</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Viagens</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-item *ngFor='let a of viagens; let i = index'>
+      <ion-card>
+        <img src="{{a.imagem}}" alt="">
+        <ion-card-header>
+          <ion-card-subtitle>>data da viagem {{a.data}}</ion-card-subtitle>
+          <ion-card-title>Viagem a {{a.local}}</ion-card-title>
+        </ion-card-header>
 
+        <ion-card-content>
+          descrição: {{a.descricao}}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
 </ion-content>
